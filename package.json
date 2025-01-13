@@ -1,0 +1,15 @@
+{
+  "name": "lesson3-server",
+  "version": "1.0.0",
+  "description": " the server for color-hunt client",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/R/!!!!!!!!הנדסאות תוכנה-רכיבים/רייזי וייטמן/שנה ב/Node/lesson3-server"
+  },
+  "author": "Ashdod",
+  "license": "ISC"
+}
