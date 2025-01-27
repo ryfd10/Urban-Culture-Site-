@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: black;
+    color:aqua ;
+    text-align: center;
+}
+#colors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#colors .square{
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    margin: 10px;
+    outline: 2px solid white;
+    outline-offset: 8px;
+}
