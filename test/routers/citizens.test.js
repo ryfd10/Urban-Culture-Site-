@@ -11,3 +11,15 @@ describe('GET', () => {
         })
     })
 })
+describe('POST', () => {
+    describe('/add-family', () => {
+        it('should add a new family to the data', async () => {
+            const response = await request(app).post('/citizens/add-family')
+            .set('content-type','application/json')
+                .send({ name: 'cohen', street: 'yanay 3', area: '7' })
+
+            expect(response.status).toBe(201)
+            expect(response.body).toEqual({ name: 'cohen', street: 'yanay 3', area: '7' })
+        })
+    })
+})
