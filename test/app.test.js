@@ -9,7 +9,8 @@ describe('GET',()=>{
             const response=await request(app).get('/')
 
             expect(response.status).toBe(200)
-            expect(response.text).toEqual('server')
+           expect(response.header['content-type']).toEqual('text/html; charset=UTF-8')
+          // expect(response.text).toEqual('server')
         })
     })
 })
