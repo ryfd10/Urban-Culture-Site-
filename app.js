@@ -4,17 +4,25 @@ const path = require('path')
 const { startLogger, endLogger } = require('./utils/middlewares/logger')
 const app = express()
 
+app.use(startLogger)
 
 app.use('/my-style', express.static(path.join(__dirname, './pages/styles')))
 app.use('/my-script', express.static(path.join(__dirname, './pages/scripts')))
 
 app.get('/', startLogger, (req, res, next) => {
     res.status(200).sendFile(path.join(__dirname, './pages/index.html'))
+    res.locals['response'] = 200
     next()
-}, endLogger)
+})
 app.use('/citizens', citizenRouter)
 
-app.get('/*', (req, res) => {
-    res.status(404).send(`the ${req.url} was not found`)
+app.get('/*', (req, res, next) => {
+    if (!res.locals['response']) {
+        res.status(404).send(`the ${req.url} was not found`)
+        res.locals(['response']) = 404
+    }
+    next()
 })
+
+app.use(endLogger)
 module.exports = { app }

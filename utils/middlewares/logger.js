@@ -1,3 +1,4 @@
+
 const { logToFile } = require("../../services/logger")
 
 function startLogger(req, res, next) {
@@ -15,7 +16,9 @@ function endLogger(req, res) {
     const logObject = {
         option: 'end',
         method: res.method,
-        url: new Date().toISOString()
+        url:req.url,
+        response:res.locals['response'],
+        time: new Date().toISOString()
     }
     logToFile(logObject)
 }
