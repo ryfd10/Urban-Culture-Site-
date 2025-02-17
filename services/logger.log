@@ -1,2 +1,10 @@
 {"try":"1,1,1,1,1"}
 {"try":"1,1,1,1,1"}
+{"option":"start","method":"GET","url":"/","time":"2025-02-17T14:52:44.993Z"}
+{"option":"start","method":"GET","url":"/","time":"2025-02-17T14:52:44.998Z"}
+{"option":"end","url":"/","response":200,"time":"2025-02-17T14:52:45.002Z"}
+{"option":"start","method":"GET","url":"/my-style/main.css","time":"2025-02-17T14:52:45.017Z"}
+{"option":"start","method":"GET","url":"/my-script/dom.js","time":"2025-02-17T14:52:45.020Z"}
+{"option":"start","method":"GET","url":"/favicon.ico","time":"2025-02-17T14:52:45.059Z"}
+{"option":"start","method":"POST","url":"/events/create","time":"2025-02-17T14:53:41.581Z"}
+{"option":"end","url":"/events/create","response":201,"time":"2025-02-17T14:53:41.583Z"}
