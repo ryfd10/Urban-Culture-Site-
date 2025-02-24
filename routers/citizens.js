@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+const { checkRequireBodrArgumrnts } = require('../utils/middlewares/validations');
 
 const router = express.Router()
 
@@ -16,24 +17,16 @@ router.get('/all-street/:streetname/area/:area-name', (req, res, next) => {
     res.locals['response'] = 200
     next()
 })
-router.post('/add-family', express.json(), (req, res, next) => {
-    const family = req.body
-    console.table({ family })
-    res.status(201).json({ ...family })
-    res.locals['response'] = 201
+router.post('/add-family', express.json(), checkRequireBodrArgumrnts(['name', 'address', 'phone']), (req, res, next) => {
+    if (res.locals['response'] === undefined) {
+        const family = req.body
+        console.table({ family })
+        res.status(201).json({ ...family })
+        res.locals['response'] = 201
+    }
     next()
 
 })
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router;

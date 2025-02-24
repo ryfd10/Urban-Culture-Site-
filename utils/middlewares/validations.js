@@ -1,4 +1,10 @@
-const checkRequireBodrArgumrnts = (args) => {
+const checkRequireBodrArgumrnts = (args=[]) => {
+    if(args instanceof Array===false){
+        throw TypeError(`args mast be type of array received ${typeof args}`)
+    }
+    if(args.some(item=>typeof item !=='string')){
+        throw TypeError('all items in the arg array mast be of type string')
+    }
     return (req, res, next) => {
         if (args) {
             if (req.body === undefined) {
