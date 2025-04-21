@@ -10,8 +10,8 @@ const NewFamily=()=>{
         myHeaders.append("Content-Type","application/json")
         myHeaders.append("Authorization","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQyOTg3OTA5fQ.0oJIkR6rPRLspPHvGBWHjMLCnIHxV7rC0aOcWZpWefE")
         console.log({ name, address,phone });
-        const response= await fetch('http://127.0.0.1:8080/users/login',{
-            body:JSON.stringify({name,address,phone}),
+        const response= await fetch('http://127.0.0.1:8080/citizens/add-family',{
+            body:JSON.stringify({name, address, phone}),
             method:'POST',
             headers:myHeaders
         })
@@ -20,7 +20,7 @@ const NewFamily=()=>{
 return <>
         <h2>Add Family</h2>
         <p>
-            <input type="text" placeholder="user name" value={name} onInput={(ev) => setName(ev.target.value)}></input>
+            <input type="text" placeholder="name" value={name} onInput={(ev) => setName(ev.target.value)}></input>
         </p>
         <p>
             <input type="text" placeholder="address" value={address} onInput={(ev) => setAddress(ev.target.value)}></input>
