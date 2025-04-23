@@ -1,22 +1,15 @@
 import { useState } from "react"
-
+import { useDispatch } from "react-redux"
+import {login as loginUser} from "../../../store/user"
 
 
 const SignIn = () => {
-
+const dispatch=useDispatch()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     const login = async() => {
-        const myHeaders=new Headers()
-        myHeaders.append("Content-Type","application/json")
-        console.log({ username, password });
-        const response= await fetch('http://127.0.0.1:8080/users/login',{
-            body:JSON.stringify({username,password}),
-            method:'POST',
-            headers:myHeaders
-        })
-console.log(response);
+      dispatch(loginUser({username,password}))
 
     }
 
