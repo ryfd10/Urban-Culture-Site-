@@ -1,9 +1,11 @@
-import { useState } from "react"
-import { useDispatch } from "react-redux"
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import {login as loginUser} from "../../../store/user"
 
 
 const SignIn = () => {
+
+    const loginState=useSelector(state=>state.User.requestState)
 const dispatch=useDispatch()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -12,6 +14,10 @@ const dispatch=useDispatch()
       dispatch(loginUser({username,password}))
 
     }
+    useEffect(()=>{
+        console.log({loginState});
+        
+    },[loginState])
 
 
     return <>
