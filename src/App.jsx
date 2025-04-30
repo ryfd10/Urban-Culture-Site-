@@ -1,16 +1,15 @@
 
+import { Outlet } from 'react-router'
 import './App.css'
-import NewFamily from './components/NewFamily/NewFamily'
-import SignIn from './pages/Register/SingIn/SignIn'
 
 function App() {
  
 
   return (
     <>
+    app
+    <Outlet></Outlet>
     
-    <SignIn></SignIn>
-    <NewFamily></NewFamily>
     </>
   )
 }
