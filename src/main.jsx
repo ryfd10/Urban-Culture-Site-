@@ -6,6 +6,7 @@ import store from './store/store.js'
 import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Admin from './pages/Admin/Admin.jsx'
+import Home from './pages/Home/Home.jsx'
 import SignIn from './pages/Register/SingIn/SignIn.jsx'
 import Register from './pages/Register/Register.jsx'
 import SignUp from './pages/Register/SignUp/SignUp.jsx'
@@ -13,7 +14,8 @@ import SignUp from './pages/Register/SignUp/SignUp.jsx'
 
 const routes = createBrowserRouter([
   {
-    path: '/', element: <App></App>, childern: [
+    path: '/', element: <App></App>, children: [
+      {path:'', element: <Home></Home>},
       { path:'admin', element: <Admin></Admin> }
     ]
   },
