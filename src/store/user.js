@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { postToServer } from '../services/connect-to-server';
+import { getFromServer, postToServer } from '../services/connect-to-server';
 
 export const login = createAsyncThunk('login/user', async ({ username, password }, { rejectWithValue }) => {
     try {
@@ -16,6 +16,21 @@ export const login = createAsyncThunk('login/user', async ({ username, password 
         return rejectWithValue(error.message)
     }
 })
+export const getAll = async() => {
+    try {
+        //const myHeaders = new Headers()
+       // myHeaders.append("Content-Type", "application/json")
+        const response = await getFromServer('http://127.0.0.1:8080/citizens/all')
+        //const table = response
+        console.log(response);
+
+        return { response }
+
+    }
+    catch (error) {
+        return rejectWithValue(error.message)
+    }
+}
 
 
 const user = createSlice({

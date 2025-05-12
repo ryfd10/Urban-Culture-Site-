@@ -1,14 +1,24 @@
 import axios from "axios"
 
 
-export const postToServer = async (url, headers, data) => {
+const postToServer = async (url, headers, data) => {
     try {
         const response = await axios.post(url, data, {
             headers
         })
-      return  response
+        return response
     }
     catch (err) {
         throw err
     }
 }
+const getFromServer = (async(url) => {
+   
+const response = await axios.get(url)
+console.log({response});
+
+   return {response} 
+
+})
+export { postToServer, getFromServer }
+

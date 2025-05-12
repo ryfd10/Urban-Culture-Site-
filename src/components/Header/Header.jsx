@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useSelector,useDispatch } from "react-redux"
 import './Header.css'
 import { useNavigate } from "react-router"
+import {logout} from "../../store/user"
 
 
 
@@ -10,7 +11,7 @@ const nav=useNavigate()
     const { user } = useSelector(state => state.User)
     const [massage, setMassage] = useState()
     const [isLogIn, setIsLogIn] = useState(false)
-
+const dispatch=useDispatch()
     useEffect(() => {
         if (user) {
             setIsLogIn(true)
@@ -35,7 +36,8 @@ const nav=useNavigate()
 
     const btnClick=()=>{
         if(isLogIn){
-
+dispatch(logout())
+setIsLogIn(false)
         }
     
     else{
