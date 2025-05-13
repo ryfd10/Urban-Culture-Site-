@@ -15,9 +15,8 @@ const postToServer = async (url, headers, data) => {
 const getFromServer = (async(url) => {
    
 const response = await axios.get(url)
-console.log({response});
 
-   return {response} 
+   return {...response} 
 
 })
 export { postToServer, getFromServer }

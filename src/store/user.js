@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { getFromServer, postToServer } from '../services/connect-to-server';
-
 export const login = createAsyncThunk('login/user', async ({ username, password }, { rejectWithValue }) => {
     try {
         const myHeaders = new Headers()
@@ -8,9 +7,7 @@ export const login = createAsyncThunk('login/user', async ({ username, password 
         const response = await postToServer('http://127.0.0.1:8080/users/login', myHeaders, { username, password })
         const token = response.headers.getAuthorization()
         console.log(token);
-
         return { token, username }
-
     }
     catch (error) {
         return rejectWithValue(error.message)
@@ -22,7 +19,7 @@ export const getAll = async() => {
        // myHeaders.append("Content-Type", "application/json")
         const response = await getFromServer('http://127.0.0.1:8080/citizens/all')
         //const table = response
-        console.log(response);
+      //  console.log(response);
 
         return { response }
 
@@ -31,8 +28,6 @@ export const getAll = async() => {
         return rejectWithValue(error.message)
     }
 }
-
-
 const user = createSlice({
     name: 'users',
     initialState: { user: undefined, token: undefined, requestState: undefined },
@@ -52,8 +47,6 @@ const user = createSlice({
                 state.token = payload.token
                 state.user = payload.username
                 state.requestState = 'success'
-
-
             })
             .addCase(login.pending, (state) => {
                 console.log('pending');
@@ -64,7 +57,6 @@ const user = createSlice({
                 console.log(payload);
                 console.log(state);
                 state.requestState = 'reject'
-
             })
     }
 })

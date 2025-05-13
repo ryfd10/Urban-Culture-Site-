@@ -11,7 +11,7 @@ import SignIn from './pages/Register/SingIn/SignIn.jsx'
 import Register from './pages/Register/Register.jsx'
 import SignUp from './pages/Register/SignUp/SignUp.jsx'
 import NewFamily from './components/NewFamily/NewFamily.jsx'
-
+import ShowFamily from './pages/ShowFamily/ShowFamily.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -19,7 +19,8 @@ const routes = createBrowserRouter([
       { path: '', element: <Home></Home> },
       {
         path: 'admin', element: <Admin></Admin>, children: [
-          { path: 'newFamily', element: <NewFamily></NewFamily> }
+          { path: 'newFamily', element: <NewFamily></NewFamily> },
+          { path: 'showFamily', element: <ShowFamily></ShowFamily>}
         ]
       },
     ]
