@@ -28,5 +28,31 @@
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
     "vite": "^6.0.5"
-  }
+  },
+  "name": "lesson3-server",
+  "version": "1.0.0",
+  "description": " the server for color-hunt client",
+  "main": "index.js",
+  "scripts": {
+   
+    "start":"node server",
+    "dev":"nodemon server", 
+    "test": "jest"
+    
+    
+  },
+  "dependencies":{
+    "dotenv":"^16.3.1",
+    "express":"^4.21.1"
+  },
+  "devDependencies":{
+    "jest":"^29..7.0",
+    "nodemon":"^3.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/R/!!!!!!!!הנדסאות תוכנה-רכיבים/רייזי וייטמן/שנה ב/Node/lesson3-server"
+  },
+  "author": "Ashdod",
+  "license": "ISC"
 }
