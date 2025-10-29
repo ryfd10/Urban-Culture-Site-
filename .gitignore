@@ -29,4 +29,9 @@ dist-ssr
 /data
 
 #tests
+<<<<<<< HEAD
 /coverage
+=======
+/coverageserver/node_modules/
+server/.env
+>>>>>>> fd88b460660b13e63a401f8dff7409e8913799be
