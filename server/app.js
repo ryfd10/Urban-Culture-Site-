@@ -1,7 +1,7 @@
 const express = require('express')
-const citizenRouter = require('./routers/citizens')
+const citizenRouter = require('./server/routers/citizens')
 const path = require('path')
-const eventRouter=require('./routers/events')
+const eventRouter=require('./server/routers/events')
 const { startLogger, endLogger } = require('./utils/middlewares/logger')
 const app = express()
 

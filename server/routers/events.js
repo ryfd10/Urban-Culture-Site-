@@ -1,5 +1,5 @@
 const express = require('express')
-const { checkRequireBodrArgumrnts } = require('../utils/middlewares/validations')
+const { checkRequireBodrArgumrnts } = require('../../utils/middlewares/validations')
 const router = express.Router()
 
 
