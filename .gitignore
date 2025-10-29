@@ -5,4 +5,5 @@
 /data
 
 #tests
-/coverage
+/coverageserver/node_modules/
+server/.env
