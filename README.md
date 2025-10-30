@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-=======
 # Municipal Culture Events Management System 🎭
 
 ## Overview
@@ -92,4 +83,4 @@ This comprehensive web application revolutionizes the management of municipal cu
 - Responsive design
 - Mobile-friendly interface
 - Basic viewport support
->>>>>>> 4e4ff537f6b426a24b445ebd1b2c0fa0c936b2ac
+
